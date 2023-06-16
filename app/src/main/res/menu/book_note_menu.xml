@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="@string/menu_book_note_delete"
+        android:id="@+id/menu_book_note_delete"/>
+    <item
+        android:title="@string/menu_book_note_export"
+        android:id="@+id/menu_book_note_export"/>
+
+</menu>

@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="app.mango.music.ui.main.MainActivity">
+    <item
+        android:id="@+id/to_library"
+        android:icon="@drawable/ic_library_books"
+        android:title="@string/library_fragment_label" />
+    <item
+        android:id="@+id/to_excerpt"
+        android:icon="@drawable/ic_note_alt"
+        android:title="@string/excerpt_fragment_label" />
+    <item
+        android:id="@+id/to_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/settings_fragment_label" />
+</menu>

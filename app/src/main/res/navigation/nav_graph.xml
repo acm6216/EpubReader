@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/to_library">
+    <fragment
+        android:id="@+id/to_library"
+        android:name="cen.xiaoyuan.epub.ui.library.LibraryFragment"
+        android:label="@string/library_fragment_label"
+        tools:layout="@layout/fragment_library">
+        <action
+            android:id="@+id/to_reader"
+            app:destination="@id/to_reader"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/to_reader"
+        tools:layout="@layout/fragment_reader"
+        android:label="@string/reader_fragment_label"
+        android:name="cen.xiaoyuan.epub.ui.reader.ReaderFragment">
+        <argument
+            app:nullable="true"
+            android:defaultValue="@null"
+            android:name="id"
+            app:argType="string"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/to_excerpt"
+        android:label="@string/excerpt_fragment_label"
+        tools:layout="@layout/fragment_excerpt"
+        android:name="cen.xiaoyuan.epub.ui.excerpt.ExcerptFragment"/>
+
+    <fragment
+        android:label="@string/settings_fragment_label"
+        android:id="@+id/to_settings"
+        android:name="cen.xiaoyuan.epub.ui.preference.SettingsFragment"/>
+
+</navigation>

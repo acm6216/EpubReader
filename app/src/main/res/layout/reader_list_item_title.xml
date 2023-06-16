@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="title"
+            type="cen.xiaoyuan.epub.ui.reader.ReaderItem.Title" />
+    </data>
+    <cen.xiaoyuan.epub.ui.views.EnableCopyTextView
+        android:id="@+id/text"
+        android:text="@{title.text}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_title_logo"
+        android:drawablePadding="12sp"
+        android:gravity="start|center_vertical"
+        android:paddingLeft="17sp"
+        android:paddingTop="46sp"
+        android:paddingRight="17sp"
+        android:paddingBottom="17sp"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:text="@tools:sample/lorem"
+        tools:ignore="UseCompatTextViewDrawableXml" />
+</layout>

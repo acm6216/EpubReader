@@ -1,0 +1,171 @@
+<resources>
+    <string name="app_name">EPUB Reader</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- Image/Button Content Description -->
+    <string name="content_description_filter">过滤</string>
+    <string name="content_description_add_epub">添加EPUB书籍</string>
+    <string name="content_description_more">更多操作</string>
+    <string name="content_description_cover">书籍封面</string>
+    <string name="content_description_add_book">添加书籍</string>
+
+    <string name="library_books_count">共 %d 本书</string>
+
+    <!-- Books Filter -->
+    <string name="library_filter_title">过滤</string>
+    <string name="library_filter_key">关键词（作者、书名）</string>
+    <string name="library_filter_seen">已读</string>
+    <string name="library_filter_favorite">收藏</string>
+
+    <!-- Fragment Label-->
+    <string name="library_fragment_label">书库</string>
+    <string name="reader_fragment_label">阅读</string>
+    <string name="excerpt_fragment_label">摘抄</string>
+    <string name="settings_fragment_label">设置</string>
+
+    <!-- EPUB Add Dialog-->
+    <string name="add_epub_book_title">选择导入方式</string>
+    <string name="add_epub_book_message">1、从文件夹导入：App使用SAF框架访问用户文件，效率较低，因此只扫描所选择的“根目录”，子文件夹不会被扫描。\n注意：AOSP33+ 系统，Downloads目录、根目录等涉及用户隐私不可直接选择。\n\n2、从文件导入：支持单文件、多文件。</string>
+    <string name="menu_add_book_mark">添加书签</string>
+    <string name="menu_excerpt">摘抄</string>
+
+    <string name="epub_uri_error_message">请使用其他文件提供器。\n提供者：%s 的Uri不支持持久化存储。</string>
+    <string name="epub_uri_error_title">不持支此类型的文件提供器</string>
+
+    <!-- Library Menu-->
+    <string name="menu_library_detail">详细信息</string>
+    <string name="menu_library_completed">标记已读</string>
+    <string name="menu_library_reading">标记未读</string>
+    <string name="menu_library_delete">从列表删除</string>
+    <string name="menu_library_delete_all">全部删除</string>
+
+    <!-- Library Item -->
+    <string name="book_delete_title">确定要删除“%s”？</string>
+    <string name="book_delete_message">“%s” 相关书签将会被同步删除，无法恢复，请确认是否继续？</string>
+    <string name="book_delete_pos">确定删除</string>
+
+    <string name="books_delete_title">确定要删除全部书籍？</string>
+    <string name="books_delete_message">“%d” 本书及其相关书签将会被同步删除，无法恢复，请确认是否继续？</string>
+    <string name="books_delete_pos">确定删除</string>
+
+    <string name="toast_library_loading">文件解析中，请稍等。</string>
+
+    <!-- Reader Mark Menu-->
+    <string name="menu_book_mark_delete">删除此书签</string>
+
+    <!-- Reader Note Menu-->
+    <string name="menu_book_note_delete">删除此条</string>
+    <string name="menu_book_note_export">导出所有</string>
+
+    <!-- Reader Nav Tab-->
+    <string-array name="nav_point_tab">
+        <item>目录</item>
+        <item>书签</item>
+        <item>摘抄</item>
+    </string-array>
+
+    <!-- Reader Menu -->
+    <string name="menu_nav_point">导航</string>
+    <string name="menu_nav_top">跳转顶部</string>
+    <string name="menu_nav_bottom">跳转底部</string>
+
+    <!-- Reader List End -->
+    <string name="reader_end">本书 [完]</string>
+
+    <!-- Reader List Menu -->
+    <string name="menu_save_picture">保存图片</string>
+
+    <string name="menu_bottom_view">视图</string>
+
+    <!-- Reader List -->
+    <string name="reader_reload">重新加载</string>
+
+    <!-- EPUB Add -->
+    <string name="add_epub_status">添加完成</string>
+    <string name="add_epub_status_error">解析失败</string>
+    <string name="add_epub_status_intersect">已存在</string>
+    <string name="add_epub_status_success">已完成</string>
+    <string name="add_epub_message">EPUB文件：%d 个\n成功：%d 个\n失败：%d 个\n已存在：%d 个\n%s</string>
+    <string name="add_epub_files">从文件导入</string>
+    <string name="add_epub_folder">从文件夹导入</string>
+    <string name="add_epub_close" translatable="false">@string/close</string>
+    <string name="add_epub_error">不是EPUB文件</string>
+
+    <!-- General -->
+    <string name="close">关闭</string>
+
+    <!-- Book Information -->
+    <string name="book_info_title">“%s” 属性</string>
+    <string name="book_name">书名</string>
+    <string name="book_chapters">章节数</string>
+    <string name="book_creator">"作者</string>
+    <string name="book_publisher">出版社</string>
+    <string name="book_language">语言</string>
+    <string name="book_type">类型</string>
+    <string name="book_epub_id" translatable="false">EPUB ID</string>
+    <string name="book_isbn" translatable="false">ISBN</string>
+    <string name="book_publication_date">出版时间</string>
+    <string name="book_epub_creation">EPUB创作时间</string>
+    <string name="book_description">描述</string>
+    <string name="book_uri" translatable="false">URI</string>
+    <string name="book_file_name">文件名</string>
+    <string name="book_file_last_modified">最后修改时间</string>
+    <string name="book_file_last_reading">最后阅读时间</string>
+
+    <!-- Preference Titles -->
+    <string name="set_ui_title">主题</string>
+    <string name="set_dark_mode">深色模式</string>
+    <string name="set_dark_mode_key" translatable="false">set_dark_mode_key</string>
+    <string-array name="set_dark_mode_entries">
+        <item>开启</item>
+        <item>关闭</item>
+        <item>跟随系统(默认)</item>
+    </string-array>
+    <string name="set_dark_mode_default" translatable="false">follow system</string>
+    <string-array name="set_dark_mode_values" translatable="false">
+        <item>on</item>
+        <item>off</item>
+        <item>@string/set_dark_mode_default</item>
+    </string-array>
+    <string name="set_color_filter">电子书模式</string>
+    <string name="set_color_filter_key" translatable="false">set_color_filter_key</string>
+    <bool name="set_color_filter_default">false</bool>
+
+    <!-- Preference Reader -->
+    <string name="set_reader_title">阅读器</string>
+    <string name="set_reader_text_size">字体大小</string>
+    <string name="set_reader_text_size_key">set_reader_text_size_key</string>
+    <integer name="set_reader_text_size_default">50</integer>
+    <string name="set_reader_text_size_default">默认值(50)</string>
+    <integer name="set_reader_text_size_min">20</integer>
+    <integer name="set_reader_text_size_max">200</integer>
+
+    <string name="set_reader_background_color">背景颜色</string>
+    <string name="set_reader_background_color_key">set_reader_background_color_key</string>
+    <integer name="set_reader_background_color_default">0xFFFFFFFF</integer>
+
+    <string name="set_reader_text_color">字体颜色</string>
+    <string name="set_reader_text_color_key">set_reader_text_color_key</string>
+    <integer name="set_reader_text_color_default">0xFF000000</integer>
+
+    <string name="set_preview_text">中国制造\nMade in China</string>
+    <string name="set_preview_title">实时预览</string>
+    <string name="set_preview_key">实时预览</string>
+
+    <string name="set_color_follow_system">自定义颜色</string>
+    <string name="set_color_follow_system_key">set_color_follow_system_key</string>
+    <bool name="set_color_follow_system_default">false</bool>
+    <string name="set_color_follow_system_on">字体和背景使用自定义颜色</string>
+    <string name="set_color_follow_system_off">字体和背景跟随当前主题</string>
+
+    <!-- View Action Mime -->
+    <string name="epub_mime_type" translatable="false">application/epub+zip</string>
+
+    <string name="choose_color_title">颜色选择</string>
+    <string name="choose_color_close">关闭</string>
+    <string name="choose_color_save">保存</string>
+    <string name="choose_color_def">默认</string>
+
+    <string name="excerpt_header">(%d)</string>
+</resources>

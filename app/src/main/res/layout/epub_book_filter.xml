@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="lib"
+            type="cen.xiaoyuan.epub.ui.library.LibraryViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:paddingTop="@dimen/grid_1"
+        android:paddingStart="?dialogPreferredPadding"
+        android:paddingEnd="?dialogPreferredPadding"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <com.google.android.material.textfield.TextInputLayout
+            app:endIconDrawable="@drawable/ic_close"
+            app:endIconCheckable="true"
+            app:endIconMode="clear_text"
+            android:id="@+id/text_input_layout"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="@string/library_filter_key"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:id="@+id/text_input_edit_text"
+                android:text="@={lib.bookKeywordFilter}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:layout_marginTop="@dimen/grid_1"
+            android:layout_marginBottom="@dimen/grid_1"
+            android:id="@+id/divider"
+            app:layout_constraintTop_toBottomOf="@id/text_input_layout"
+            android:background="?dividerHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/reader_status"
+            android:checked="@={lib.bookReadStatusFilter}"
+            android:layout_marginTop="@dimen/grid_1"
+            android:text="@string/library_filter_seen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.SwitchCompat
+            android:checked="@={lib.bookFavoriteFilter}"
+            android:layout_marginTop="@dimen/grid_1"
+            android:text="@string/library_filter_favorite"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/reader_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

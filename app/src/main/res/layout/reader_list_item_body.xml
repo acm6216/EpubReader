@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="body"
+            type="cen.xiaoyuan.epub.ui.reader.ReaderItem.Body" />
+    </data>
+    <cen.xiaoyuan.epub.ui.views.EnableCopyTextView
+        android:id="@+id/text"
+        android:autoLink="all"
+        android:text="@{body.text}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        tools:text="@tools:sample/lorem/random" />
+</layout>

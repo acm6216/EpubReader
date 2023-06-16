@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="chapter"
+            type="cen.xiaoyuan.epub.data.Chapter" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="?selectableItemBackground"
+        android:clipToPadding="true"
+        android:paddingStart="?dialogPreferredPadding"
+        android:paddingEnd="?dialogPreferredPadding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:paddingVertical="@dimen/grid_1"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@{chapter.chapterTitle}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/grid_5"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

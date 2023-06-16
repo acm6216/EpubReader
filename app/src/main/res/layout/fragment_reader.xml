@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="adapter"
+            type="cen.xiaoyuan.epub.ui.reader.ReaderAdapter" />
+
+        <variable
+            name="reader"
+            type="cen.xiaoyuan.epub.ui.reader.ReaderViewModel" />
+        <variable
+            name="chapter"
+            type="cen.xiaoyuan.epub.ui.reader.ChapterDetail" />
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_behavior=".ui.behavior.ToolbarBehavior"
+                app:liftOnScroll="false"
+                app:paddingTopSystemWindowInsets="@{true}">
+
+                <cen.xiaoyuan.epub.ui.views.MarqueeToolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:menu="@menu/reader_main"
+                    app:subtitle="@{reader.currentBook.info.creator}"
+                    app:title="@{reader.currentBook.title}" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/indicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:indeterminate="true"
+                        app:fadeToVisibilityUnsafe="@{reader.isLoading}" />
+                    <ProgressBar
+                        app:isGone="@{reader.isLoading()}"
+                        android:progressDrawable="@drawable/progress"
+                        android:max="@{reader.epubContent.size()}"
+                        android:progress="@{reader.epubContentProgress}"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"/>
+                </FrameLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adapter="@{adapter}"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:transitionGroup="true"
+                app:layoutManager=".ui.reader.TopLinearLayoutManager"
+                app:paddingBottomFromTopSystemWindowInsets="@{true}"
+                app:paddingTopSystemWindowInsets="@{true}" />
+
+            <com.google.android.material.appbar.AppBarLayout
+                app:liftOnScroll="false"
+                android:layout_gravity="bottom"
+                app:layout_behavior=".ui.behavior.BottomToolbarBehavior"
+                app:paddingBottomSystemWindowInsets="@{true}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <cen.xiaoyuan.epub.ui.views.MarqueeToolbar
+                    app:title="@{chapter.chapterTitle}"
+                    app:subtitle="@{chapter.chapterProgress}"
+                    app:menu="@menu/reader_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize"/>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <cen.xiaoyuan.epub.ui.views.WidthLimitedConstraintLayout
+            android:layout_gravity="end"
+            android:background="?colorAppBarSurface"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            tools:ignore="VisualLintBounds">
+
+            <fragment
+                android:tag="cen.xiaoyuan.epub.ui.EpubBookNavPoint"
+                android:name="cen.xiaoyuan.epub.ui.reader.nav.EpubBookNavPoint"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="FragmentTagUsage"
+                tools:layout="@layout/epub_nav_point" />
+
+        </cen.xiaoyuan.epub.ui.views.WidthLimitedConstraintLayout>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

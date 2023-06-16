@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Widget.Epub.Material3.CompoundButton.Switch" parent="Widget.Material3.CompoundButton.Switch">
+        <item name="android:thumb">@drawable/switch_thumb_material3</item>
+        <item name="thumbTint">@color/switch_thumb_tint_material3_color</item>
+        <item name="thumbTintMode">src_in</item>
+        <item name="track">@drawable/switch_track_material3</item>
+        <item name="trackTint">@color/switch_track_tint_material3_color</item>
+    </style>
+
+    <style name="Widget.Epub.Material3.TabLayout" parent="Widget.Material3.TabLayout">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="tabTextAppearance">@style/TabLayout.Text</item>
+    </style>
+
+    <style name="Preference.Epub.Material3.SimpleMenuPreference" parent="Preference.SimpleMenuPreference">
+        <item name="android:popupMenuStyle">@style/Widget.Epub.Material3.Preference.SimpleMenuPreference.PopupMenu</item>
+    </style>
+    <style name="Widget.Epub.Material3.Preference.SimpleMenuPreference.PopupMenu" parent="Widget.Preference.SimpleMenuPreference.PopupMenu">
+        <item name="android:popupBackground" tools:ignore="PrivateResource">@drawable/m3_popupmenu_background_overlay</item>
+    </style>
+
+    <style name="TabLayout.Text" parent="TextAppearance.AppCompat.Small">
+        <item name="android:fontFamily">@style/SerifText</item>
+    </style>
+
+    <style name="TextAppearance.AppCompat.Body1">
+        <item name="android:textSize" tools:ignore="SpUsage">18dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TagChapter" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:fontFamily">@style/SerifText</item>
+    </style>
+
+    <style name="Toolbar.SubtitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
+        <item name="android:fontFamily">@style/SerifText</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Widget.Epub.Material3.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="titleTextAppearance">@style/Toolbar.TitleText</item>
+        <item name="subtitleTextAppearance">@style/Toolbar.SubtitleText</item>
+    </style>
+
+    <style name="SerifText">
+        <item name="fontFamily">serif</item>
+    </style>
+
+    <style name="ShapeAppearance.NavPoint" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <style name="Base.ThemeOverlay.DialogWhenLarge" parent="ThemeOverlay.Material3" />
+
+    <style name="ThemeOverlay.DialogWhenLarge" parent="Base.ThemeOverlay.DialogWhenLarge">
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="backgroundInsetStart">@dimen/dialog_when_large_background_inset</item>
+        <item name="backgroundInsetTop">@dimen/dialog_when_large_background_inset</item>
+        <item name="backgroundInsetEnd">@dimen/dialog_when_large_background_inset</item>
+        <item name="backgroundInsetBottom">@dimen/dialog_when_large_background_inset</item>
+    </style>
+
+    <style name="ThemeOverlay.NavPoint" parent="">
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.DialogWhenLarge</item>
+    </style>
+</resources>

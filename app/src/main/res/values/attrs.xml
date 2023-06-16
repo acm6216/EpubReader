@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorAppBarSurface" format="color" />
+    <attr name="colorSecondary" format="color" />
+    <attr name="scrimBackground" format="color" />
+    <attr name="motionInterpolatorPersistent" format="reference"/>
+
+    <declare-styleable name="EdgeTransparentView">
+        <attr name="edge_position">
+            <flag name="top" value="0x01"/>
+            <flag name="bottom" value="0x02"/>
+            <flag name="left" value="0x04"/>
+            <flag name="right" value="0x08"/>
+        </attr>
+
+        <attr name="edge_width" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="LobsterPicker">
+        <attr name="color_wheel_thickness" format="dimension" />
+        <attr name="color_wheel_radius" format="dimension" />
+        <attr name="color_wheel_pointer_radius" format="dimension" />
+        <attr name="color_wheel_pointer_shadow_radius" format="dimension"/>
+        <attr name="color_wheel_pointer_shadow" format="color"/>
+        <attr name="color_wheel_scheme" format="reference" />
+        <attr name="color_history_enabled" format="boolean"/>
+        <attr name="color_history_radius" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="LobsterSlider">
+        <attr name="color_slider_thickness" format="dimension" />
+        <attr name="color_slider_length" format="dimension" />
+        <attr name="color_slider_pointer_radius" format="dimension" />
+        <attr name="color_slider_pointer_shadow_radius" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="LobsterShadeSlider">
+        <attr name="color_slider_scheme" format="reference"/>
+    </declare-styleable>
+</resources>

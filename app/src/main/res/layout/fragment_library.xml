@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="lib"
+            type="cen.xiaoyuan.epub.ui.library.LibraryViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:overScrollMode="never"
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:paddingTopSystemWindowInsets="@{true}"
+            android:paddingBottom="100dp"
+            app:spanCount="@integer/span_count" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            app:marginTopSystemWindowInsets="@{true}"
+            app:fadeToVisibilityUnsafe="@{lib.fadeToVisibility}"
+            android:id="@+id/indicator"
+            android:indeterminate="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.cardview.widget.CardView
+            app:marginBottomSystemWindowInsets="@{true}"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="?colorPrimaryInverse"
+            app:layout_behavior=".ui.behavior.FabBehavior"
+            android:layout_margin="@dimen/fab_margin"
+            android:layout_gravity="bottom|end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="PrivateResource">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <ImageView
+                android:background="?selectableItemBackground"
+                android:padding="12dp"
+                android:src="@drawable/ic_add"
+                android:id="@+id/fab"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/content_description_add_book" />
+
+            <ImageView
+                android:background="?selectableItemBackground"
+                android:padding="12dp"
+                android:id="@+id/filter"
+                android:src="@drawable/ic_filter_list"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/content_description_add_epub"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="content"
+            type="cen.xiaoyuan.epub.ui.excerpt.ExcerptItem.ExcerptContent" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:clipToPadding="true"
+        android:background="?selectableItemBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title"
+            android:paddingTop="@dimen/grid_1"
+            android:paddingHorizontal="@dimen/grid_2"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/more"
+            android:text="@{content.content}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:paddingHorizontal="@dimen/grid_2"
+            android:layout_marginTop="@dimen/grid_0_5"
+            android:paddingBottom="@dimen/grid_1"
+            app:layout_constraintEnd_toStartOf="@id/more"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:date_text="@{content.date}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:contentDescription="@string/content_description_more"
+            android:paddingVertical="12dp"
+            android:focusable="true"
+            android:clickable="true"
+            android:background="?selectableItemBackground"
+            android:src="@drawable/ic_more"
+            android:id="@+id/more"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="@dimen/grid_5"
+            android:layout_height="@dimen/grid_5"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

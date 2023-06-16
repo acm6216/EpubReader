@@ -1,0 +1,54 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/set_ui_title">
+        <rikka.preference.SimpleMenuPreference
+            android:defaultValue="@string/set_dark_mode_default"
+            android:entries="@array/set_dark_mode_entries"
+            android:entryValues="@array/set_dark_mode_values"
+            app:useSimpleSummaryProvider="true"
+            app:key="@string/set_dark_mode_key"
+            app:title="@string/set_dark_mode" />
+        <SwitchPreferenceCompat
+            app:key="@string/set_color_filter_key"
+            app:title="@string/set_color_filter" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="@string/set_reader_title">
+        <SeekBarPreference
+            android:key="@string/set_reader_text_size_key"
+            app:showSeekBarValue="true"
+            android:defaultValue="@integer/set_reader_text_size_default"
+            android:max="@integer/set_reader_text_size_max"
+            app:min="@integer/set_reader_text_size_min"
+            android:summary="@string/set_reader_text_size_default"
+            app:title="@string/set_reader_text_size"/>
+        <SwitchPreferenceCompat
+            android:summaryOn="@string/set_color_follow_system_on"
+            android:summaryOff="@string/set_color_follow_system_off"
+            android:defaultValue="@bool/set_color_follow_system_default"
+            android:key="@string/set_color_follow_system_key"
+            android:title="@string/set_color_follow_system"/>
+        <cen.xiaoyuan.epub.ui.preference.ColorPreference
+            android:dependency="@string/set_color_follow_system_key"
+            app:allowDividerBelow="false"
+            app:allowDividerAbove="false"
+            app:layout="@layout/preference_color_picker"
+            app:title="@string/set_reader_background_color"
+            android:key="@string/set_reader_background_color_key"/>
+        <cen.xiaoyuan.epub.ui.preference.ColorPreference
+            android:dependency="@string/set_color_follow_system_key"
+            app:allowDividerBelow="false"
+            app:allowDividerAbove="false"
+            app:layout="@layout/preference_color_picker"
+            app:title="@string/set_reader_text_color"
+            android:key="@string/set_reader_text_color_key"/>
+
+        <cen.xiaoyuan.epub.ui.preference.PreviewPreference
+            android:dependency="@string/set_color_follow_system_key"
+            app:layout="@layout/preference_preview"
+            app:title="@string/set_preview_title"
+            android:key="@string/set_preview_key"/>
+    </PreferenceCategory>
+</PreferenceScreen>
